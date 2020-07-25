@@ -20,7 +20,7 @@ Route::get('/', function () {
     // PublicTokenKey=14843e0419858c21', 'ClassName');
     // exec('amr');    
     // exec('dotnet /Users/amr/Development/Development/Websites/iprotect-backend/routes/test.dll amr');    
-    $o = shell_exec('dotnet ~/test.dll ~/test.pdf 123456');  
+    $o = shell_exec('sudo dotnet ~/test.dll ~/test.pdf 123456');  
     dd($o);  
     // return view('welcome');
 });
