@@ -14,13 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    // $processID = shell_exec("./test.dll 2>&1 &");
-    // exec('ps ' . $processID, $processState);
-    // new DOTNET('DllName, Version=4.0.30319.33440, Culture=neutral,
-    // PublicTokenKey=14843e0419858c21', 'ClassName');
-    // exec('amr');    
-    // exec('dotnet /Users/amr/Development/Development/Websites/iprotect-backend/routes/test.dll amr');    
-    $o = shell_exec('sudo dotnet ~/test.dll ~/test.pdf 123456');  
-    dd($o);  
+    // $o = shell_exec('sudo dotnet ~/test.dll ~/test.pdf 123456');  
+    // dd($o);  
     // return view('welcome');
 });
