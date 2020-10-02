@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class AuthController extends Controller
 {
@@ -73,5 +74,19 @@ class AuthController extends Controller
         $user->update($data);
         $user->save();
         return new JsonResponse(['success' => true, 'data' => $user]);
+    }
+
+    public function uploadAvatar(Request $request)
+    {
+        $disk = Storage::disk('gcs');
+        $disk->put('avatars/1', $request->file('avatar'));
+        // $path = $request->file('avatar')->store('avatars');
+
+        return $path;
+    }
+
+    public function me()
+    {
+        return new JsonResponse(['success' => true, 'data' => auth()->user()]);
     }
 }

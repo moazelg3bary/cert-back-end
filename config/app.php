@@ -176,6 +176,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Auth\Providers\PassportServiceProvider::class,
 
+        Superbalist\LaravelGoogleCloudStorage\GoogleCloudStorageServiceProvider::class,
+
     ],
 
     /*
