@@ -29,3 +29,5 @@ Route::group(['prefix' => 'certificate', 'middleware' => 'auth:api'], function (
     Route::get('/', 'API\CertificateController@getCertificates');
     Route::post('/', 'API\CertificateController@newCertificate');
 });
+
+// Mc6ncCMxCmOCogEp
