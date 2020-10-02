@@ -59,4 +59,4 @@ $response->send();
 
 $kernel->terminate($request, $response);
 
-header('Location: main/');
+// header('Location: main/');

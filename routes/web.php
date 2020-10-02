@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     // $o = shell_exec('sudo dotnet ~/test.dll ~/test.pdf 123456');  
     // dd($o);  
-    // return view('welcome');
+    return Redirect::to('/main/#/');
 });
