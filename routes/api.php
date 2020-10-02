@@ -18,9 +18,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/register', 'Api\AuthController@register');
-Route::post('/login', 'Api\AuthController@login');
+Route::post('/register', 'API\AuthController@register');
+Route::post('/login', 'API\AuthController@login');
 
 Route::group(['prefix' => 'auth', 'middleware' => 'auth:api'], function () {
-    Route::post('/complete-profile', 'Api\AuthController@completeProfile');
+    Route::post('/complete-profile', 'API\AuthController@completeProfile');
+});
+
+Route::group(['prefix' => 'certificate', 'middleware' => 'auth:api'], function () {
+    Route::get('/', 'API\CertificateController@getCertificates');
+    Route::post('/', 'API\CertificateController@newCertificate');
 });
