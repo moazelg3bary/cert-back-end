@@ -30,6 +30,7 @@ Route::group(['prefix' => 'auth', 'middleware' => 'auth:api'], function () {
 Route::group(['prefix' => 'certificate', 'middleware' => 'auth:api'], function () {
     Route::get('/', 'API\CertificateController@getCertificates');
     Route::post('/', 'API\CertificateController@newCertificate');
+    Route::post('/upload', 'API\CertificateController@upload');
 });
 
 // Mc6ncCMxCmOCogEp

@@ -8,6 +8,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 
 class AuthController extends Controller
 {
@@ -55,8 +56,7 @@ class AuthController extends Controller
             'first_name' => 'required|max:55',
             'middle_name' => 'required|max:55',
             'last_name' => 'required|max:55',
-            'id_type' => 'required|in:id,passport',
-            'id_number' => 'required|unique:users'
+            'id_type' => 'required|in:id,passport'
         ]);
 
         if ($validator->fails()) {
@@ -78,11 +78,39 @@ class AuthController extends Controller
 
     public function uploadAvatar(Request $request)
     {
-        $disk = Storage::disk('gcs');
-        $disk->put('avatars/1', $request->file('avatar'));
-        // $path = $request->file('avatar')->store('avatars');
+        if(!$request->avatar) {
+            return new JsonResponse(['success' => false], 500);
+        }
+        $allowedExtensions = ['jpg', 'png', 'jpeg'];
+        $extension = explode('/', mime_content_type($request->avatar))[1];
+        if(!in_array($extension, $allowedExtensions)) {
+            return new JsonResponse(['success' => false, 'extension' => $extension], 500);
+        }
 
-        return $path;
+        $image = base64_decode(preg_replace('#^data:image/[^;]+;base64,#', '', $request->avatar));
+
+        $disk = Storage::disk('gcs');
+
+        $user = auth()->user();
+        if($user->avatar_name) {
+            $disk->delete($user->avatar_name);
+        }
+        // $image = $request->file('avatar');
+        $prefix = 'avatars/';
+        $extension = '.jpg';
+        $image_name = $prefix . Carbon::now()->timestamp . $extension;
+        $avatar = $disk->put($image_name, $image);
+        // return $avatar;
+        $disk->setVisibility($image_name, 'public');
+
+        $url = $disk->url($image_name);
+
+        $user->avatar_name = $image_name;
+        $user->avatar_url = $url;
+
+        $user->save();
+
+        return new JsonResponse(['success' => true, 'data' => auth()->user()]);
     }
 
     public function me()
