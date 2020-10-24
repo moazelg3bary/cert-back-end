@@ -35,6 +35,12 @@ class CertificateController extends Controller
         return new JsonResponse(['success' => true, 'data' => auth()->user()->certificates]);
     }
 
+    public function getCertificateById(Request $request)
+    {
+        $certificate = Certificate::findOrFail($request['id']);
+        return new JsonResponse(['success' => true, 'data' => $certificate]);
+    }
+
     public function upload(Request $request)
     {
         $disk_gcs = Storage::disk('gcs');
