@@ -13,8 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/generate', function () {
     // $o = shell_exec('sudo dotnet ~/test.dll ~/test.pdf 123456');  
     // dd($o);  
-    return Redirect::to('/main/#/');
+
+    // PDF::setOptions(['defaultFont' => 'courier-bold']);
+
+    // return PDF::loadFile(public_path().'/certificate/index.html')->save(public_path().'/certificate/test.pdf')->stream('download.pdf');
+
+    $pdf = PDF::loadView('certificate.index');
+    return $pdf->stream('document.pdf');
+
+    // return public_path().'/certificate/index.html';
+
+    // return Redirect::to('/main/#/');
 });

@@ -25,13 +25,21 @@ Route::group(['prefix' => 'auth', 'middleware' => 'auth:api'], function () {
     Route::post('/complete-profile', 'API\AuthController@completeProfile');
     Route::post('/upload', 'API\AuthController@uploadAvatar');
     Route::get('/me', 'API\AuthController@me');
+    Route::post('/profile', 'API\AuthController@updateProfile');
 });
 
-Route::group(['prefix' => 'certificate', 'middleware' => 'auth:api'], function () {
+Route::group(['prefix' => 'certificate', 'middleware' => ['addAccessToken', 'auth:api']], function () {
+    Route::post('/test', 'API\CertificateController@test');
     Route::get('/', 'API\CertificateController@getCertificates');
     Route::get('/{id}', 'API\CertificateController@getCertificateById');
     Route::post('/', 'API\CertificateController@newCertificate');
     Route::post('/upload', 'API\CertificateController@upload');
+
 });
+
+Route::group(['prefix' => 'view'], function () {
+    Route::get('certificate/{id}', 'API\ViewerController@ViewCertificate');
+});
+
 
 // Mc6ncCMxCmOCogEp

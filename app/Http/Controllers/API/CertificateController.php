@@ -9,7 +9,7 @@ use App\Certificate;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Str;
 
 // SIGNER CODE 
 
@@ -23,6 +23,7 @@ class CertificateController extends Controller
     {
         $user = auth()->user();
         $request['data'] = json_encode($request->data);
+        $request['uuid'] = (string) Str::uuid();
         // return $request;
         $certificate = new Certificate($request->toArray());
         
@@ -33,6 +34,11 @@ class CertificateController extends Controller
     public function getCertificates()
     {
         return new JsonResponse(['success' => true, 'data' => auth()->user()->certificates]);
+    }
+
+    public function test()
+    {
+        return request()->header();
     }
 
     public function getCertificateById(Request $request)

@@ -15,6 +15,7 @@ class CreateCertificatesTable extends Migration
     {
         Schema::create('certificates', function (Blueprint $table) {
             $table->id();
+            $table->string('uuid')->unique();
             $table->integer('user_id');
             $table->string('property_type');
             $table->string('title');

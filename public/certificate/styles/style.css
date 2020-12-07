@@ -1,0 +1,138 @@
+@font-face {
+    font-family: "Almarai-Regular";
+    src: url("../fonts/Almarai-Regular.ttf") format("truetype");
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Almarai-Regular;
+    position: relative;
+}
+
+.c-overlay {
+    display: block;
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.certificate {
+    width: 793.706px;
+    height: 1122.52px;
+    background-image: url('../img/background.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.certificate .border {
+    width: 100%;
+    height: 6px;
+    background-color: #0066cc;
+}
+
+.center {
+    position: relative;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    display: block;
+}
+
+.center-div-ar {
+    position: relative;
+    left: 50%;
+    text-align: right;
+    transform: translateX(-50%);
+    display: block;
+}
+
+.center-ar {
+    text-align: right;
+}
+
+.title .text {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.title .title-left {
+    height: 15px;
+    margin-right: 10px;
+}
+
+.title .title-right {
+    height: 15px;
+    margin-left: 10px;
+}
+
+.cer-ar {
+    margin-top: 20px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+}
+
+.cer-ar span {
+    padding: 0;
+    margin: 5px 0;
+    display: inline-block;
+}
+.cer-ar p {
+    padding: 0;
+    margin: 5px 0;
+    display: inline-block;
+}
+
+.content {
+    text-align: right;
+}
+
+.logo {
+    display: block;
+    margin: 20px auto;
+    width: 120px;
+}
+
+.egypt {
+    display: block;
+    margin: 10px auto;
+    width: 120px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.qrcode {
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.qrcode-details {
+    font-size: 15px;
+}
+
+.qrcode-details .ar {
+    text-align: right;
+}
+
+.signature {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+}
+
+.signature img {
+    height: 150px;
+}

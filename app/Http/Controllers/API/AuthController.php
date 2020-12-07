@@ -66,11 +66,32 @@ class AuthController extends Controller
         $user = auth()->user();
 
         if($user['profile_completed']) {
-            // return new JsonResponse(['success' => false], 500);
+            return new JsonResponse(['success' => false], 500);
         }
 
         $data = $request->only('id_type', 'id_number', 'first_name', 'middle_name', 'last_name');
         $data['profile_completed'] = true;
+        $user->update($data);
+        $user->save();
+        return new JsonResponse(['success' => true, 'data' => $user]);
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $user = auth()->user();
+        $validator = Validator::make($request->all(), [
+            'first_name' => 'required|max:55',
+            'middle_name' => 'required|max:55',
+            'last_name' => 'required|max:55',
+            'id_number' => 'required|min:2|numeric',
+            'email' => 'required|email|unique:users,email,'.$user->id,
+            'nationality' => 'required|max:55',
+            'phone_number' => 'max:55'
+        ]);
+        if ($validator->fails()) {
+            return new JsonResponse(['success' => false, 'errors' => $validator->messages()], 500);
+        }
+        $data = $request->only('email', 'phone_number', 'country_of_residence', 'nationality', 'id_number', 'first_name', 'middle_name', 'last_name');
         $user->update($data);
         $user->save();
         return new JsonResponse(['success' => true, 'data' => $user]);
