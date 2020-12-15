@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/generate', function () {
+Route::get('/test', function () {
     // $o = shell_exec('sudo dotnet ~/test.dll ~/test.pdf 123456');  
     // dd($o);  
 
@@ -21,10 +21,12 @@ Route::get('/generate', function () {
 
     // return PDF::loadFile(public_path().'/certificate/index.html')->save(public_path().'/certificate/test.pdf')->stream('download.pdf');
 
-    $pdf = PDF::loadView('certificate.index');
-    return $pdf->stream('document.pdf');
+    // $pdf = PDF::loadView('certificate.index');
+    // return $pdf->stream('document.pdf');
 
     // return public_path().'/certificate/index.html';
 
     // return Redirect::to('/main/#/');
+
+
 });

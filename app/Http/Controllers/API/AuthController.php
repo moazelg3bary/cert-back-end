@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
+use App\Providers\SendMail;
 
 class AuthController extends Controller
 {
@@ -47,6 +48,12 @@ class AuthController extends Controller
         $user = auth()->user();
         $user['token'] = auth()->user()->createToken('authToken')->accessToken;
 
+        SendMail::dispatch([
+            'user' => $user,
+            'template' => 'emails.login',
+            'subject' => SendMail::getLoginSubject()
+        ]);
+    
         return new JsonResponse(['success' => true, 'data' => $user]);
     }
 
@@ -65,9 +72,9 @@ class AuthController extends Controller
 
         $user = auth()->user();
 
-        if($user['profile_completed']) {
-            return new JsonResponse(['success' => false], 500);
-        }
+        // if($user['profile_completed']) {
+        //     return new JsonResponse(['success' => false], 500);
+        // }
 
         $data = $request->only('id_type', 'id_number', 'first_name', 'middle_name', 'last_name');
         $data['profile_completed'] = true;
