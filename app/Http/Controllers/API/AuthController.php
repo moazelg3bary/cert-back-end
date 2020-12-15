@@ -72,9 +72,9 @@ class AuthController extends Controller
 
         $user = auth()->user();
 
-        // if($user['profile_completed']) {
-        //     return new JsonResponse(['success' => false], 500);
-        // }
+        if($user['profile_completed']) {
+            return new JsonResponse(['success' => false], 500);
+        }
 
         $data = $request->only('id_type', 'id_number', 'first_name', 'middle_name', 'last_name');
         $data['profile_completed'] = true;
