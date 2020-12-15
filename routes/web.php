@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('landing');
+});
+
 Route::get('/test', function () {
     // $o = shell_exec('sudo dotnet ~/test.dll ~/test.pdf 123456');  
     // dd($o);  

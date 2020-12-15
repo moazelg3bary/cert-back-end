@@ -1,0 +1,270 @@
+@font-face{
+	font-family:Rubik-regular;
+	src:url(../font/Rubik-Regular.ttf);
+}
+body, .all{
+	font-family:Rubik-regular;
+}
+a,button{color:#fff;padding:14px 24px;letter-spacing:1px;}
+
+@media only screen and (max-width:370px){
+	 button,a{padding:5px;letter-spacing:0;}  }
+	 
+	 
+	 
+a:hover{text-decoration:none;color:#fff;}
+.text-bold{font-weight:bold;}
+
+/**********************/
+.header{padding:20px 0 20px 20px;}
+
+.header .lang{
+	font-size:16px;
+	margin-left:40px;
+	padding-top:10px;
+}
+@media only screen and (max-width: 892px) and (min-width: 767px){
+	.header .lang{
+	margin-left:10px;
+	font-size:12px;
+}
+.header .container{margin-right:0;padding-right:0;}
+}
+/**********************/
+.hole-layout .row{
+	padding:0;
+	margin:0;
+
+	}
+.hole-layout .all{
+	height:100vh;	
+	background-color:#2673E5;
+	color:#fff;
+	position:relative;}
+	
+	
+/********right form**************/
+.hole-layout .content{
+    display:flex;
+	align-items:center;
+	justify-content:center;
+	}
+/*************************************************/	
+
+.hole-layout .welcome{
+	height:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+.hole-layout .welcome .btn-outline-light{border:2px solid #fff;padding:14px 24px;}
+.hole-layout .welcome .btn-outline-light:hover{color:#fff;background:transparent;}
+.hole-layout .overlay-left{
+	 position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: transparent url('../img/iprotect/Mask Group-left.png')  no-repeat padding-box;  
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+}
+.hole-layout .overlay{	
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: transparent url('../img/iprotect/Mask Group 1.png')  no-repeat padding-box;
+  
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+
+}
+.hole-layout .welcome .info{position:relative;z-index:10;}
+.hole-layout .welcome .info h1{letter-spacing:3px;}
+.hole-layout .welcome .info p{
+	margin-top:50px;
+	font-size:30px;
+	line-height:1.2em;}
+	
+.hole-layout .welcome .info a{
+	padding:10px 25px;
+	margin-top:20px;	
+}
+
+
+/*******************************/
+.hole-layout .register-form{width:80%;margin:0 auto;}
+
+@media only screen and (max-width: 767.98px) {
+	.content,.content-right{margin:30px 0;}
+	.hole-layout .register-form{
+       width:100%;
+	   margin:0;	 
+	}
+	.hole-layout .register-form .title{font-size:14px;}
+	.hole-layout .register-form .form-body .col-lg-5{padding-right:0;}
+
+}
+
+.hole-layout .register-form .title{margin-left:40px;position:relative;}
+.hole-layout .register-form h2{
+	font-size:30px;
+	line-height:36px;
+	padding-bottom:10px;}
+.hole-layout .register-form h2::after{
+	content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+	width:100px;
+	height:3px;
+	margin-top:10px;
+	background-color:#2673E5;
+}
+ ::placeholder{font-size:14px;}
+.hole-layout .register-form .control-group{margin-bottom:30px;}
+.hole-layout .register-form .form-body label{
+	font-size:14px;
+	padding-left:15px;
+	line-height:17px;}
+.hole-layout .register-form .form-body .forgot{padding-left:20px;}
+.hole-layout .register-form .form-body input[type="password"]{position:relative;}
+
+.hole-layout .register-form .form-body input
+,.hole-layout .register-form .form-body select{
+	border-radius:2px;
+	background-color:#EAEAEA;
+	border:0;
+	height:58px;
+}
+.hole-layout .register-form .form-body .col-lg-5{padding-left:0;padding-bottom:30px;}
+.hole-layout .register-form .form-body .col-lg-7{padding-right:0;padding-left:0;}
+.hole-layout .register-form .form-body .container{padding-right:0;padding-top:20px;}
+
+	/***********************************************************/
+.navbar .navbar-collapse {position:relative;}
+.bg-light{background-color:#EBECED!important;}
+.navbar .List ul li{margin-left:30px;}
+.navbar .List ul li img{width:50px;height:50px;}
+.navbar .List i{font-size:25px;color:#2673E5;}
+.navbar .List .lang{font-weight:bold;}
+.navbar .navbar-nav  {
+      flex-direction: row;
+  }
+  
+  @media only screen and (max-width: 991px) and (min-width: 767px){
+	  .navbar .navbar-nav  {
+		position:relative;
+		left:40%;
+  }}
+   @media only screen and (max-width: 766px) and (min-width: 501px){
+	  .navbar .navbar-nav  {
+		position:relative;
+		left:30%;
+  }
+  }
+  @media only screen and (max-width: 500px) and (min-width: 360px){
+	  .navbar .navbar-nav  {
+		position:relative;
+		left:25%;
+  }
+  }
+  @media only screen and (max-width:259px){
+	  .navbar .navbar-nav  {
+		position:relative;
+		left:0%;
+  }
+  }
+   @media only screen and (max-width:336px){
+	 .navbar-brand{margin-right:0;}  
+	 .navbar-toggler {
+    padding: .25rem .50rem;
+    font-size: 1rem;
+}
+	   
+   }
+/****************************************************/
+.message{padding:20px;}
+.message .message-info span{margin-left:10px;font-weight:bold;}
+.message .message-info{position:relative;line-height:1.2em;}
+.message .message-info p:last-child{
+	padding-bottom:15px;
+}
+.message .message-info p::after{
+	content: '';
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+	width:100px;
+	height:3px;
+	margin-top:10px;
+	background-color:#2673E5;
+}
+@media only screen and (max-width: 300px) {
+.message .message-info p::after{
+         left: 22%!important;	 
+	}
+}
+@media only screen and (max-width: 767.98px) {
+.message .message-info p::after{
+         left: 35%;	 
+	}
+}
+ .form-inline{
+    display: inline-block;
+	position:relative
+ }
+ .form-inline input
+{
+	
+	border-radius:2px;
+	background-color:#EAEAEA;
+	border:0;
+}
+ .form-inline span{
+	 position:absolute;
+	left:4px;
+	top:6px;;
+}
+
+/*****************************/
+.data-table .table-striped tbody tr:nth-of-type(even) {
+    background-color: rgba(0,0,0,.05);
+}
+.data-table .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,0);
+}
+.data-table .table-striped tbody tr{height:88px;}
+.data-table .table-striped tbody tr {font-size:14px;}
+.data-table .table-striped tbody tr h4{font-size:16px;font-weight:bold;}
+.data-table thead{border-bottom:1px solid #A3ABBD;}
+.data-table  .suc{color:#2673E5;}
+.data-table .rev{color:#DBB205;}
+.data-table .action{color:#2673E5}
+.data-table i{margin-right:5px;}
+.data-table img{margin-right:5px;}
+.data-table .t-light{
+	color:#A3ABBD;
+    font-size:15px;}
+.data-table .t-light .v{color:#000;
+text-decoration:underline;}
+
+/*****************************************/
+.message .message-img{margin-top:50px;}
+.message .message-text{font-size:15px;color:#C4C4C4; margin:20px 0;}
+
+
+
+
+
+
+
+
+
+
