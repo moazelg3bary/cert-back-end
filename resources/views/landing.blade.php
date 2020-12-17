@@ -107,8 +107,8 @@
         <div class="social title-anim">
             <ul>
                 <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i> </a></li>
-                <li><a href="#"><i class="fab fa-behance" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fab fa-dribbble" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                {{-- <li><a href="#"><i class="fab fa-dribbble" aria-hidden="true"></i></a></li> --}}
             </ul>
         </div>
         <div class="container between">
@@ -608,8 +608,8 @@
                     <div class="row">
                         <div class="col-lg-6  mt-40">
                             <div class="contact-item text-left">
-                                <h3>Akar <span>Studio</span></h3>
-                                <a href="#">Flower 03/11 Street Klaten, Central Java, Indonesia</a>
+                                <h3>iProtect</h3>
+                                <a href="#">Via Di Tor Cervara 280A, Rome, Italy.</a>
                             </div>
                         </div>
 
@@ -618,17 +618,17 @@
                                 <div>
                                     <h3>Say <span>Hello</span></h3>
                                     <div>
-                                        <a class="mail" href="#">hello@akarstudio.com</a>
+                                        <a class="mail" href="#">hello@iprotect-mena.com</a>
                                     </div>
                                     <div class="mt-10">
-                                        <a class="phone" href="#">+313-1253-312</a>
+                                        <a class="phone" href="#">+39-328-638-4196</a>
                                     </div>
                                     <div class="social mt-10">
                                         <ul>
                                             <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i> </a></li>
-                                            <li><a href="#"><i class="fab fa-behance" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-dribbble" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                                            {{-- <li><a href="#"><i class="fab fa-dribbble" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li> --}}
                                         </ul>
                                     </div>
                                 </div>
