@@ -6,6 +6,14 @@
         $('#preloader').delay(350).fadeOut('slow');
     })
 
+
+    // DASHBOARD OR LOGIN
+    if (localStorage['iprotect__token']) {
+        document.getElementById('dashboard-btns').style.display = 'block';
+    } else {
+        document.getElementById('login-btns').style.display = 'block';
+    }
+
     //--------------------------------------------------
     // Animation on Load Hero
     //--------------------------------------------------
@@ -99,9 +107,9 @@
     //--------------------------------------------------
     // Animation on Icon  Toggle button
     //--------------------------------------------------
-  
 
-$(".icon-btn").on('mouseenter', function () {
+
+    $(".icon-btn").on('mouseenter', function () {
         TweenMax.to('.icon-btn span', 0.2, {
             scale: '1.2'
         })
@@ -133,10 +141,10 @@ $(".icon-btn").on('mouseenter', function () {
             });
 
         var LineScene = new ScrollMagic.Scene({
-                offset: -150,
-                triggerElement: this,
-                reverse: false
-            })
+            offset: -150,
+            triggerElement: this,
+            reverse: false
+        })
             .setTween(animateLine).addTo(controllerLine);
     });
 
@@ -161,10 +169,10 @@ $(".icon-btn").on('mouseenter', function () {
             });
 
         var FadesScene = new ScrollMagic.Scene({
-                offset: -150,
-                triggerElement: this,
-                reverse: false
-            })
+            offset: -150,
+            triggerElement: this,
+            reverse: false
+        })
             .setTween(animateFades).addTo(controllerFades);
     });
 
@@ -217,11 +225,11 @@ $(".icon-btn").on('mouseenter', function () {
             }, '-=0.5');
 
         var scene = new ScrollMagic.Scene({
-                offset: -150,
-                triggerElement: this,
-                reverse: false
-            })
-        
+            offset: -150,
+            triggerElement: this,
+            reverse: false
+        })
+
             .setTween(animateIn).addTo(controller);
 
     });
@@ -270,10 +278,10 @@ $(".icon-btn").on('mouseenter', function () {
 
 
         var aboutScene = new ScrollMagic.Scene({
-                offset: -150,
-                triggerElement: this,
-                reverse: false
-            })
+            offset: -150,
+            triggerElement: this,
+            reverse: false
+        })
 
             .setTween(animateAbout).addTo(controllerAbout);
 
@@ -323,10 +331,10 @@ $(".icon-btn").on('mouseenter', function () {
 
 
         var ServiceScene = new ScrollMagic.Scene({
-                offset: -150,
-                triggerElement: this,
-                reverse: false
-            })
+            offset: -150,
+            triggerElement: this,
+            reverse: false
+        })
 
             .setTween(animateService).addTo(controllerService);
 
@@ -375,10 +383,10 @@ $(".icon-btn").on('mouseenter', function () {
 
 
         var TeamScene = new ScrollMagic.Scene({
-                offset: -150,
-                triggerElement: this,
-                reverse: false
-            })
+            offset: -150,
+            triggerElement: this,
+            reverse: false
+        })
 
             .setTween(animateTeam).addTo(controllerTeam);
 
@@ -424,10 +432,10 @@ $(".icon-btn").on('mouseenter', function () {
 
 
         var NewsScene = new ScrollMagic.Scene({
-                offset: -150,
-                triggerElement: this,
-                reverse: false
-            })
+            offset: -150,
+            triggerElement: this,
+            reverse: false
+        })
 
             .setTween(animateNews).addTo(controllerNews);
 
@@ -469,10 +477,10 @@ $(".icon-btn").on('mouseenter', function () {
             });
 
         var NewsScene = new ScrollMagic.Scene({
-                offset: -150,
-                triggerElement: this,
-                reverse: false
-            })
+            offset: -150,
+            triggerElement: this,
+            reverse: false
+        })
 
             .setTween(animateContact).addTo(controllerContact);
 
@@ -539,22 +547,22 @@ $(".icon-btn").on('mouseenter', function () {
             }),
             TweenMax.fromTo(detail, 3, {
                 y: '0',
-               
+
             }, {
                 y: -100,
                 ease: Linear.easeNone,
-                
+
             }),
 
         ]);
 
         var Scrollscene = new ScrollMagic.Scene({
-                offset: -100,
-                triggerElement: this,
-                // duration: $(window).height(), 
-                duration: '140%'
-            })
-         
+            offset: -100,
+            triggerElement: this,
+            // duration: $(window).height(), 
+            duration: '140%'
+        })
+
             .setTween(tlLeftRight).addTo(controllera);
 
     });
@@ -641,10 +649,10 @@ $(".icon-btn").on('mouseenter', function () {
                 }
             }
         });
-        $('.arrow-right.-team').on("click",function () {
+        $('.arrow-right.-team').on("click", function () {
             teamSlide.trigger('next.owl.carousel');
         })
-        $('.arrow-left.-team').on("click",function () {
+        $('.arrow-left.-team').on("click", function () {
             teamSlide.trigger('prev.owl.carousel');
         })
 
@@ -780,18 +788,18 @@ $(".icon-btn").on('mouseenter', function () {
     $(document).on("click", ".toggle-btn", function () {
         t1.reversed(!t1.reversed()); //toggles the orientation
     });
-	
+
     $(document).on("click", ".menu-link", function () {
         t1.reversed(!t1.reversed()); //sets the orientation to reversed
     });
-/*************************************/
-var t2 = new TimelineMax({
+    /*************************************/
+    var t2 = new TimelineMax({
         paused: true
     });
-	t2.to(".icon-btn", 1.5, {
+    t2.to(".icon-btn", 1.5, {
         autoAlpha: 0,
         ease: Expo.easeInOut,
-        delay:' -1.5'
+        delay: ' -1.5'
     });
     t2.to(".login-form", 1.5, {
         autoAlpha: 1,
@@ -808,5 +816,5 @@ var t2 = new TimelineMax({
     t2.reverse();
     $(document).on("click", ".icon-btn", function () {
         t2.reversed(!t2.reversed()); //toggles the orientation
-    }); 
+    });
 })(jQuery);

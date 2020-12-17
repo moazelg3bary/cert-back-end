@@ -36,12 +36,15 @@
         <nav>
 		<div class="row">
             <div class="col logo text-left">
-                <a href="index.html"><img src="landing/assets/img/logo.svg" alt="logo"></a>
+                <a href="#"><img src="landing/assets/img/logo.svg" alt="logo"></a>
             </div>
-			<div class="col login-reg text-center ">			
+			<div class="col login-reg text-center" style="display: none" id="login-btns">			
 			    <a class="btn-main login" href="main/#/login" >LOGIN</a>
-                <a class="btn-main" href="main/#/register">Register</a>
-			</div>
+                <a class="btn-main" href="main/#/register">REGISTER</a>
+            </div>
+			<div class="col login-reg text-center" style="display: none" id="dashboard-btns">			
+			    <a class="btn-main login" href="main/#/login" >DASHBOARD</a>
+            </div>
             <div class="toggle-btn text-right">
                 <div class="burger-menu">
                     <span class="one"></span>
