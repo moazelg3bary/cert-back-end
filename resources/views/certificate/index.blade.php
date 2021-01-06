@@ -17,7 +17,6 @@
     <div class="certificate" id="widget">
         <div class="border"></div>
         <div class="content">
-            <!-- <span>تجربه</span> -->
             <div class="row">
                 <div class="col-md-4">
                 </div>
@@ -54,7 +53,7 @@
                     <div class="spacer"></div>
                     <span class="center-ar">وتم تسمیته من قبل مقدم الطلب تحت اسم</span>
                     <div class="spacer"></div>
-                    "<span class="center-ar"><b>{{$certificate->title}}</b></span>"
+                    "<span class="center-ar"><b>{{$certificate->title_ar}}</b></span>"
                     <div class="spacer"></div>
                 </div>
             </div>
@@ -99,16 +98,28 @@
             </div>
         </div>
     </div>
-    {{-- <button id="btnSave">Save</button>
-    <div id="img-out"></div> --}}
 </body>
+{{-- <body>
+    <h1>تجربه</h1>
+</body> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
     integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
     crossorigin="anonymous"></script>
     <script src="{{ url('/certificate/js/jq-loading.min.js') }}"></script>
 <!-- <script src="/certificate/js/html2canvas.min.js"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-<script src="https://github.com/niklasvh/html2canvas/releases/download/0.4.1/html2canvas.js"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script> --}}
+{{-- <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script> --}}
+{{-- <script src="https://github.com/niklasvh/html2canvas/releases/download/0.4.1/html2canvas.js"></script> --}}
+
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.6/purify.min.js" integrity="sha512-rXAHWSMciPq2KsOxTvUeYNBb45apbcEXUVSIexVPOBnKfD/xo99uUe5M2OOsC49hGdUrkRLYsATkQQHMzUo/ew==" crossorigin="anonymous"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvg/3.0.7/umd.js" integrity="sha512-9cZtXG4J3AzjYnxA6XDibUfjudIYnMT03CmV8xZzdmFt6V2Fl6C6dxlXbsGTMWoLGRHSC+ljX9hYfPds/tFicg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.2.0/jspdf.umd.min.js"></script> --}}
+
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf-html2canvas@latest/dist/jspdf-html2canvas.min.js"></script>
+
 <script src="{{ url('/certificate/js/jquery-qrcode-0.18.0.min.js') }}"></script>
 <script src="{{ url('/certificate/js/main.js') }}"></script>
 

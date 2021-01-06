@@ -46,13 +46,13 @@ class AuthController extends Controller
         }
 
         $user = auth()->user();
-        $user['token'] = auth()->user()->createToken('authToken')->accessToken;
-
-        SendMail::dispatch([
-            'user' => $user,
-            'template' => 'emails.login',
-            'subject' => SendMail::getLoginSubject()
-        ]);
+        $token = auth()->user()->createToken('authToken')->accessToken;
+        $user['token'] = $token;
+        // SendMail::dispatch([
+        //     'user' => $user,
+        //     'template' => 'emails.login',
+        //     'subject' => SendMail::getLoginSubject()
+        // ]);
     
         return new JsonResponse(['success' => true, 'data' => $user]);
     }

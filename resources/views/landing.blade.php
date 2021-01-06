@@ -79,7 +79,7 @@
                                 <div class="col-lg-4 offset-lg-2 centered text-right">
                                     <div class="address-menu">
                                         <h3>ADDRESS</h3>
-                                        <h4>Flower 03/11 Street Klaten, Central Java, Indonesia</h4>
+                                        <h4>Via Di Tor Cervara 280A, Rome, Italy.</h4>
                                     </div>
                                 </div>
                             </div>
@@ -102,12 +102,13 @@
             <div class="square-overlay"></div>
         </div>
         <div class="email-link title-anim">
-            <a href="#">hello@akarstudio.com</a>
+            <a href="#">hello@iprotect-mena.com</a>
         </div>
         <div class="social title-anim">
             <ul>
                 <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i> </a></li>
                 <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                 {{-- <li><a href="#"><i class="fab fa-dribbble" aria-hidden="true"></i></a></li> --}}
             </ul>
         </div>
@@ -116,7 +117,7 @@
                 <div class="col-lg-6">
                     <div>
                         <div class="hero-title text-left">
-                            <h3 class="title-anim yellow">We are</h3>
+                            <h2 class="title-anim yellow">We are</h2>
                             <h1 class="title-anim">Secure.</h1>
                             <div class="mt-20"></div>
                             <p class="title-anim">Using block chain technology, we make sure all your files are well protected and only securely shared.</p>
@@ -627,6 +628,7 @@
                                         <ul>
                                             <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i> </a></li>
                                             <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                                             {{-- <li><a href="#"><i class="fab fa-dribbble" aria-hidden="true"></i></a></li>
                                             <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li> --}}
                                         </ul>

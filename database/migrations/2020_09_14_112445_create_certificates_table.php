@@ -19,6 +19,7 @@ class CreateCertificatesTable extends Migration
             $table->integer('user_id');
             $table->string('property_type');
             $table->string('title');
+            $table->string('title_ar');
             $table->string('description');
             $table->string('owner_type');
             $table->string('data');

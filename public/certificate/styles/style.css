@@ -14,8 +14,6 @@ body {
 .c-overlay {
     display: block;
     position: absolute;
-    /* top: 0;
-    left: 0; */
     z-index: 1;
     width: 100%;
     height: 100%;
@@ -25,7 +23,7 @@ body {
 .certificate {
     width: 793.706px;
     height: 1122.52px;
-    background-image: url('../img/background.svg');
+    background-image: url('../img/background.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     position: relative;
