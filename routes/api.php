@@ -34,6 +34,7 @@ Route::group(['prefix' => 'certificate', 'middleware' => ['addAccessToken', 'aut
     Route::get('/{id}', 'API\CertificateController@getCertificateById');
     Route::post('/', 'API\CertificateController@newCertificate');
     Route::post('/upload', 'API\CertificateController@upload');
+    Route::post('/logo', 'API\CertificateController@uploadCompanyLogo');
 
 });
 

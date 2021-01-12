@@ -24,6 +24,7 @@ class CreateCertificatesTable extends Migration
             $table->string('owner_type');
             $table->string('data');
             $table->string('status')->default(0);
+            $table->string('company_logo')->nullable()->default(null);
             $table->timestamps();
         });
     }

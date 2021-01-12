@@ -10,6 +10,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 // SIGNER CODE 
 
@@ -56,6 +57,23 @@ class CertificateController extends Controller
         $local = $disk_local->put('certificates/', $file);
 
         return $o;
+        
+    }
+
+    public function uploadCompanyLogo(Request $request)
+    {
+        $disk = Storage::disk('gcs');
+        $image = $request->file('file');
+
+        // $prefix = 'certificates/logos/';
+        // $extension = '.png';
+        // $image_name = $prefix . Carbon::now()->timestamp . $extension;
+        $avatar = $disk->put('certificates/logos', $image);
+        $disk->setVisibility($avatar, 'public');
+        $url = $disk->url($avatar);
+
+
+        return new JsonResponse(['success' => true, 'data' => $url]);
         
     }
 }
