@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Auth\Provider;
+namespace App\Auth\Providers;
 
 use League\OAuth2\Server\AuthorizationServer;
 
