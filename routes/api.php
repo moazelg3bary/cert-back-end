@@ -19,13 +19,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/register', 'API\AuthController@register');
+Route::post('/forget-password', 'API\ForgetPasswordController@forgetPassword');
+Route::view('forgot_password', 'API\AuthController')->name('password.reset');
 Route::post('/login', 'API\AuthController@login');
+Route::get('password/reset', 'API\AuthController@reset');
 
 Route::group(['prefix' => 'auth', 'middleware' => 'auth:api'], function () {
     Route::post('/complete-profile', 'API\AuthController@completeProfile');
     Route::post('/upload', 'API\AuthController@uploadAvatar');
     Route::get('/me', 'API\AuthController@me');
     Route::post('/profile', 'API\AuthController@updateProfile');
+    Route::post('/editProfile', 'API\AuthController@editProfile');
 });
 
 Route::group(['prefix' => 'certificate', 'middleware' => ['addAccessToken', 'auth:api']], function () {

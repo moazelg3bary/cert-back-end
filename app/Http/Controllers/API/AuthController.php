@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
@@ -53,7 +54,7 @@ class AuthController extends Controller
         //     'template' => 'emails.login',
         //     'subject' => SendMail::getLoginSubject()
         // ]);
-    
+
         return new JsonResponse(['success' => true, 'data' => $user]);
     }
 
@@ -145,4 +146,20 @@ class AuthController extends Controller
     {
         return new JsonResponse(['success' => true, 'data' => auth()->user()]);
     }
+
+    public function editProfile(Request $request)
+    {
+        $user = auth()->user();
+        $validator = Validator::make($request->all(), [
+            'password' => 'required|min:6'
+        ]);
+        if ($validator->fails()) {
+            return new JsonResponse(['success' => false, 'errors' => $validator->messages()], 500);
+        }
+        $request['password'] = bcrypt($request->password);
+        $user->update($request);
+        $user->save();
+        return new JsonResponse(['success' => true, 'data' => $user]);
+    }
+
 }
