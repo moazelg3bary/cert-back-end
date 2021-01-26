@@ -46,11 +46,10 @@
                                     <span
                                         style="display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; width:100px;"></span>
                                     <p style="color:#455056; font-size:15px;line-height:24px; margin:0;">
-                                        We cannot simply send you your old password. A unique link to reset your
-                                        password has been generated for you. To reset your password, click the
-                                        following link and follow the instructions.
+                                    <h6> copy link </h6>
+                                    {{url('/api/password/reset/'.$token)}}
                                     </p>
-                                    <a href="{{url('/api/password/reset')}}"
+                                    <a href="{{url('/api/password/reset/'.$token)}}"
                                        style="background:#20e277;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Reset
                                         Password</a>
                                 </td>
@@ -65,7 +64,7 @@
                 </tr>
                 <tr>
                     <td style="text-align:center;">
-                        <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; <strong>www.rakeshmandal.com</strong></p>
+                        <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; <strong></strong></p>
                     </td>
                 </tr>
                 <tr>

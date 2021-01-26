@@ -6,8 +6,11 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Str;
+use DB;
 
-class ForgetMail extends Mailable
+class ForgetPassword extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -18,7 +21,7 @@ class ForgetMail extends Mailable
      */
     public function __construct($token)
     {
-        $this->token = $token;
+        $this->token= $token;
     }
 
     /**
@@ -26,11 +29,14 @@ class ForgetMail extends Mailable
      *
      * @return $this
      */
-    public function build()
+
+    public function build(Request $request)
     {
-        return $this->subject('Forget Password')
-            ->view('emails.forgetPasword')
-            ->from('asmaa@itstellar.com');
+        return $this->markdown('emails.forgetPasword')
+            ->from('no-reply@ieso-incubator.org')
+            -> Subject('Forget Password')
+            ->with('token',$this->token);
+
 
     }
 }

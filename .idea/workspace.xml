@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9f1ce63-01e7-48cd-88b1-29ab0330631d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/emails/forgetPasword.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/iprotect-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/iprotect-backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/ForgetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/ForgetPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/ForgetMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/ForgetPassword.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/forgetPasword.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/forgetPasword.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +187,8 @@
       <option name="presentableId" value="Default" />
       <updated>1611615575839</updated>
       <workItem from="1611615578099" duration="3802000" />
-      <workItem from="1611629001380" duration="6322000" />
+      <workItem from="1611629001380" duration="8712000" />
+      <workItem from="1611667069204" duration="8551000" />
     </task>
     <servers />
   </component>
